@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LHj-uj-7gn">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -37,7 +37,7 @@
                                     <color key="titleColor" red="0.98039215690000003" green="0.95294117649999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="S76-bf-aqN" kind="presentation" modalPresentationStyle="fullScreen" id="gNG-we-art"/>
+                                    <segue destination="S76-bf-aqN" kind="show" id="gNG-we-art"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -54,12 +54,13 @@
                             <constraint firstItem="jta-ey-qJH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m4d-Lc-gnU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="2Vw-dV-PC2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.623188405797109" y="77.678571428571431"/>
+            <point key="canvasLocation" x="963.76811594202911" y="77.678571428571431"/>
         </scene>
-        <!--Round View Controller-->
+        <!--🚦  Stop Game  🚦-->
         <scene sceneID="EEJ-tn-lRF">
             <objects>
                 <viewController id="S76-bf-aqN" customClass="RoundViewController" customModule="StopGame" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,33 +68,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Np6-bQ-W5c">
-                                <rect key="frame" x="30" y="340" width="354" height="216"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select round's number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nh-9M-bTh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select number of rounds" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nh-9M-bTh">
                                 <rect key="frame" x="30" y="224.5" width="354" height="95.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.12941176470588234" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Np6-bQ-W5c">
+                                <rect key="frame" x="30" y="340" width="354" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42C-zh-beA">
+                                <rect key="frame" x="30" y="779" width="354" height="53"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.95294117649999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ax5-2y-yNS"/>
                         <color key="backgroundColor" red="0.98453372719999999" green="0.96009951829999995" blue="0.89906114339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Ax5-2y-yNS" firstAttribute="bottom" secondItem="42C-zh-beA" secondAttribute="bottom" constant="30" id="0Ci-zm-Zfq"/>
                             <constraint firstItem="Ax5-2y-yNS" firstAttribute="trailing" secondItem="2nh-9M-bTh" secondAttribute="trailing" constant="30" id="2c0-Yz-KSH"/>
+                            <constraint firstItem="42C-zh-beA" firstAttribute="centerX" secondItem="VMr-lp-oNa" secondAttribute="centerX" id="2im-Si-K9D"/>
                             <constraint firstItem="Np6-bQ-W5c" firstAttribute="centerX" secondItem="VMr-lp-oNa" secondAttribute="centerX" id="5Sb-S2-T5f"/>
                             <constraint firstItem="2nh-9M-bTh" firstAttribute="centerX" secondItem="VMr-lp-oNa" secondAttribute="centerX" id="Upb-H4-In3"/>
                             <constraint firstItem="Ax5-2y-yNS" firstAttribute="trailing" secondItem="Np6-bQ-W5c" secondAttribute="trailing" constant="30" id="dw7-mu-bE0"/>
+                            <constraint firstItem="Ax5-2y-yNS" firstAttribute="trailing" secondItem="42C-zh-beA" secondAttribute="trailing" constant="30" id="hwV-sT-SDF"/>
                             <constraint firstItem="Np6-bQ-W5c" firstAttribute="leading" secondItem="Ax5-2y-yNS" secondAttribute="leading" constant="30" id="oUp-Jp-FBj"/>
+                            <constraint firstItem="42C-zh-beA" firstAttribute="leading" secondItem="Ax5-2y-yNS" secondAttribute="leading" constant="30" id="q3c-UF-fTp"/>
                             <constraint firstItem="2nh-9M-bTh" firstAttribute="leading" secondItem="Ax5-2y-yNS" secondAttribute="leading" constant="30" id="qLM-3J-2WO"/>
                             <constraint firstItem="Np6-bQ-W5c" firstAttribute="centerY" secondItem="VMr-lp-oNa" secondAttribute="centerY" id="rMw-tl-whz"/>
                             <constraint firstItem="Np6-bQ-W5c" firstAttribute="top" secondItem="2nh-9M-bTh" secondAttribute="bottom" constant="20" id="skN-Lg-8Wt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="🚦  Stop Game  🚦" id="kGC-Ga-krC"/>
+                    <connections>
+                        <outlet property="roundsPickerView" destination="Np6-bQ-W5c" id="2IY-HG-QOl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5J-4l-ggV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879.71014492753625" y="77.678571428571431"/>
+            <point key="canvasLocation" x="1789.8550724637682" y="77.678571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AuU-yJ-Rhv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LHj-uj-7gn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ysO-sC-ayN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.1176470588" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.1176470588" green="0.12941176469999999" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LaH-Gn-JR5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMQ-yg-Hbx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
