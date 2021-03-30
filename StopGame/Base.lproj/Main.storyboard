@@ -4,21 +4,20 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StropGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gamecontroller" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qjY-dC-j2E">
                                 <rect key="frame" x="97" y="185" width="220" height="217.5"/>
-                                <color key="tintColor" red="0.98039215690000003" green="0.95294117649999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.71372549019999998" green="0.53725490200000003" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="ASr-sR-Gqf"/>
                                     <constraint firstAttribute="height" constant="220" id="AZ1-BT-fNs"/>
@@ -43,7 +42,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.91764705879999997" green="0.74901960779999999" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.95294117649999999" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="roU-Jh-YXY" firstAttribute="top" secondItem="qjY-dC-j2E" secondAttribute="bottom" constant="20" id="Gce-Sz-ed7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jta-ey-qJH" secondAttribute="bottom" constant="30" id="Gz9-bP-7GH"/>
@@ -60,26 +59,44 @@
             </objects>
             <point key="canvasLocation" x="53.623188405797109" y="77.678571428571431"/>
         </scene>
-        <!--View Controller-->
+        <!--Round View Controller-->
         <scene sceneID="EEJ-tn-lRF">
             <objects>
-                <viewController id="S76-bf-aqN" sceneMemberID="viewController">
+                <viewController id="S76-bf-aqN" customClass="RoundViewController" customModule="StopGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VMr-lp-oNa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Np6-bQ-W5c">
+                                <rect key="frame" x="30" y="340" width="354" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select round's number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nh-9M-bTh">
+                                <rect key="frame" x="30" y="224.5" width="354" height="95.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" red="0.11764705882352941" green="0.12941176470588234" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ax5-2y-yNS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.98453372719999999" green="0.96009951829999995" blue="0.89906114339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ax5-2y-yNS" firstAttribute="trailing" secondItem="2nh-9M-bTh" secondAttribute="trailing" constant="30" id="2c0-Yz-KSH"/>
+                            <constraint firstItem="Np6-bQ-W5c" firstAttribute="centerX" secondItem="VMr-lp-oNa" secondAttribute="centerX" id="5Sb-S2-T5f"/>
+                            <constraint firstItem="2nh-9M-bTh" firstAttribute="centerX" secondItem="VMr-lp-oNa" secondAttribute="centerX" id="Upb-H4-In3"/>
+                            <constraint firstItem="Ax5-2y-yNS" firstAttribute="trailing" secondItem="Np6-bQ-W5c" secondAttribute="trailing" constant="30" id="dw7-mu-bE0"/>
+                            <constraint firstItem="Np6-bQ-W5c" firstAttribute="leading" secondItem="Ax5-2y-yNS" secondAttribute="leading" constant="30" id="oUp-Jp-FBj"/>
+                            <constraint firstItem="2nh-9M-bTh" firstAttribute="leading" secondItem="Ax5-2y-yNS" secondAttribute="leading" constant="30" id="qLM-3J-2WO"/>
+                            <constraint firstItem="Np6-bQ-W5c" firstAttribute="centerY" secondItem="VMr-lp-oNa" secondAttribute="centerY" id="rMw-tl-whz"/>
+                            <constraint firstItem="Np6-bQ-W5c" firstAttribute="top" secondItem="2nh-9M-bTh" secondAttribute="bottom" constant="20" id="skN-Lg-8Wt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5J-4l-ggV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880" y="78"/>
+            <point key="canvasLocation" x="879.71014492753625" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
