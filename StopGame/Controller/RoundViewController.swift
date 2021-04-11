@@ -12,7 +12,7 @@ class RoundViewController: UIViewController {
     @IBOutlet weak var roundsPickerView: UIPickerView!
     
     let roundsOptions = ["5 rounds", "10 rounds", "15 rounds"]
-    var roundsSelected = 0
+    var roundsSelected = 5 //El valor por defecto sera 5 rounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,20 @@ class RoundViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
     }
+    
+    
+    @IBAction func chooseLetterPressed(_ sender: UIButton) {
+    
+        performSegue(withIdentifier: "roundsToLetterSegue", sender: self)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let roundsNum = self.roundsSelected
+        let destinationVC = segue.destination as! ChooseLetterViewControler
+        destinationVC.roundsNumber = roundsNum
+    }
+    
 }
 
 //MARK - UIPickerViewDelegate
@@ -43,10 +57,8 @@ extension RoundViewController: UIPickerViewDelegate {
         default:
             roundsSelected = 5
         }
-        
         print(roundsSelected)
     }
-    
 }
 
 //MARK - UIPickerViewDataSource protocol
