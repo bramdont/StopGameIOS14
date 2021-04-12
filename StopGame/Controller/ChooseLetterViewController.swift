@@ -14,9 +14,16 @@ class ChooseLetterViewControler: UIViewController {
     var roundsNumber = 0
     var letter : String? = nil
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        letter = nil
+        letterTextField.text = nil
     }
     
     @IBAction func PlayButtonPressed(_ sender: UIButton) {

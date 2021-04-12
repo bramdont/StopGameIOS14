@@ -25,6 +25,7 @@ class GameViewController: UIViewController {
         objectTableView.register(UINib(nibName:K.Cell.nibName, bundle: nil), forCellReuseIdentifier: K.Cell.identifier)
         //hide Table View separator
         //objectTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        objectTableView.backgroundColor = UIColor(named: K.backgroundColor)
     }
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
@@ -35,17 +36,19 @@ class GameViewController: UIViewController {
 extension GameViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameBrain.objectCells.count
+        return K.Cell.objectCells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellLabel = gameBrain.objectCells[indexPath.row]
+        let cellTitle = gameBrain.getRowTitle(for: indexPath.row)
+        let placeholderText = cellTitle.lowercased()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.identifier, for: indexPath) as! GameCell
         
-        cell.objectTitleLable.text = cellLabel
-        cell.objectImageView.image = UIImage(imageLiteralResourceName: K.Cell.image)
+        cell.objectTitleLable.text = cellTitle
+        cell.objectImageView.image = UIImage(imageLiteralResourceName: gameBrain.getImageName(for: cellTitle))
+        cell.objectTextField.placeholder = gameBrain.getPlaceHolder(for: cellTitle)
         
         return cell
     }

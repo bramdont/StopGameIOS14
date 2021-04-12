@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD4F3DFABAD6B04C358A1A7 /* Pods_StopGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACED549D5181610D7FCCD28 /* Pods_StopGame.framework */; };
 		D215B0B0262270840088A605 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D215B0AF262270840088A605 /* GameViewController.swift */; };
 		D215B0B4262285E20088A605 /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D215B0B2262285E20088A605 /* GameCell.swift */; };
 		D215B0B5262285E20088A605 /* GameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D215B0B3262285E20088A605 /* GameCell.xib */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26235564129430FE7777FF47 /* Pods-StopGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopGame.release.xcconfig"; path = "Target Support Files/Pods-StopGame/Pods-StopGame.release.xcconfig"; sourceTree = "<group>"; };
+		8818DA4AA7A4FBB632C0064C /* Pods-StopGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopGame.debug.xcconfig"; path = "Target Support Files/Pods-StopGame/Pods-StopGame.debug.xcconfig"; sourceTree = "<group>"; };
+		8ACED549D5181610D7FCCD28 /* Pods_StopGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StopGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D215B0AF262270840088A605 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D215B0B2262285E20088A605 /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		D215B0B3262285E20088A605 /* GameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameCell.xib; sourceTree = "<group>"; };
@@ -45,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AD4F3DFABAD6B04C358A1A7 /* Pods_StopGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21A31F52DDCD2B1138A07C67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8ACED549D5181610D7FCCD28 /* Pods_StopGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6319D046AC254D7B23DB0F0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8818DA4AA7A4FBB632C0064C /* Pods-StopGame.debug.xcconfig */,
+				26235564129430FE7777FF47 /* Pods-StopGame.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D265393B26138C5900B67A22 = {
 			isa = PBXGroup;
 			children = (
 				D265394626138C5900B67A22 /* StopGame */,
 				D265394526138C5900B67A22 /* Products */,
+				6319D046AC254D7B23DB0F0C /* Pods */,
+				21A31F52DDCD2B1138A07C67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,9 +144,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D265395826138C5C00B67A22 /* Build configuration list for PBXNativeTarget "StopGame" */;
 			buildPhases = (
+				944120228713254D8871D4FB /* [CP] Check Pods Manifest.lock */,
 				D265394026138C5900B67A22 /* Sources */,
 				D265394126138C5900B67A22 /* Frameworks */,
 				D265394226138C5900B67A22 /* Resources */,
+				3FC0E98EBFDD13ED4F5FDA74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +204,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FC0E98EBFDD13ED4F5FDA74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StopGame/Pods-StopGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StopGame/Pods-StopGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StopGame/Pods-StopGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		944120228713254D8871D4FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StopGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D265394026138C5900B67A22 /* Sources */ = {
@@ -335,6 +404,7 @@
 		};
 		D265395926138C5C00B67A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8818DA4AA7A4FBB632C0064C /* Pods-StopGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -354,6 +424,7 @@
 		};
 		D265395A26138C5C00B67A22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26235564129430FE7777FF47 /* Pods-StopGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
