@@ -12,13 +12,14 @@ class GameViewController: UIViewController {
     @IBOutlet weak var objectTableView: UITableView!
     
     var gameBrain = GameBrain(totalRounds: 0)
-    var gameCell = GameCell()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO
+        //Remove all Object in this array in order to be empty when adding items in UITableView DataSource function
+        gameBrain.gameCells.removeAll()
+        
         print(gameBrain.totalRounds)
-        title = "\(K.gameScreen.icon) \(K.gameScreen.title) \(gameBrain.playingLetter) \(K.gameScreen.icon)"
+        title = "\(K.gameScreen.icon) \(K.gameScreen.title) \(gameBrain.playingLetter.uppercased()) \(K.gameScreen.icon)"
         
         self.objectTableView.dataSource = self
         
@@ -29,6 +30,7 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func stopButtonPressed(_ sender: UIButton) {
+        
         
     }
 }
@@ -42,13 +44,16 @@ extension GameViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellTitle = gameBrain.getRowTitle(for: indexPath.row)
-        let placeholderText = cellTitle.lowercased()
+        //let placeholderText = cellTitle.lowercased()
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.identifier, for: indexPath) as! GameCell
         
         cell.objectTitleLable.text = cellTitle
         cell.objectImageView.image = UIImage(imageLiteralResourceName: gameBrain.getImageName(for: cellTitle))
         cell.objectTextField.placeholder = gameBrain.getPlaceHolder(for: cellTitle)
+        
+        //Save all cells in order to interact with those invididual views to get each user input value
+        gameBrain.gameCells.append(cell)
         
         return cell
     }

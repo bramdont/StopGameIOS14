@@ -11,6 +11,8 @@ struct K {
     
     static let appName = "🚦 Stop Game 🚦"
     static let backgroundColor = "BackgroundColor"
+    static let textFieldBorderColor = "ButtonColor"
+    static let imageViewBorderColor = "btnTextColor"
     
     struct Cell {
         static let name = "ReusableCell"

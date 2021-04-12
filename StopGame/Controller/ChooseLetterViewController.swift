@@ -17,7 +17,10 @@ class ChooseLetterViewControler: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO
+        //Rounding textField corners and setting the right color
+        letterTextField.layer.cornerRadius = 20.0
+        letterTextField.layer.borderWidth = 2.0
+        letterTextField.layer.borderColor = UIColor(named: K.textFieldBorderColor)?.cgColor
         
     }
     

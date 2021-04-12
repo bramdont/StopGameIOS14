@@ -11,6 +11,7 @@ struct GameBrain {
     var totalRounds: Int
     var currentRound = 0
     var playingLetter = ""
+    var gameCells : [GameCell] = [GameCell()]
     
     // K in upper case refers to the Constant.swift file
     
